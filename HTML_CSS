@@ -1,0 +1,219 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="module2.js"></script>
+
+
+</head>
+
+<body>
+    <nav class=" navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Zoyolo</a>
+            </div>
+
+
+            <ul class="nav navbar-nav">
+                <li class="glyphicon glyphicon-th" style="font-size:40px" ;> </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="search"><input type="text" class="form-control" id="email" placeholder="Enter Customer Name">
+                </li>
+
+            </ul>
+            <ul>
+                <li class="login"><a href="#">Login/SignUp</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-4">
+                <h2>Khetrapal Nursing Home</h2>
+                <h3>Gn 5, F N g Sector Rajaouri Garden</h3>
+                <h2>__________________________</h2>
+                <h4>Khetrapal Nursing Home</h4>
+                <div class="right_scrollbox">
+
+
+                    <div>
+                        <pre>Availability &nbsp; <a href="#" class="unavailable">SUN </a> <a href="#" class="available"> MON </a> <a href="#" class="available"> TUE </a><a href="#" class="available"> WED </a><a href="#" class="available"> THR </a> <a href="#" class="available"> FRI </a><a href="#" class="available"> SAT </a></pre>
+
+                    </div>
+                    <pre><a href="#"><button id="time">Time</a></button>  | <a href="#"><button id="amen">Amenities</a></button> </pre>
+                    <div id="p1">
+                        <p><input type="date" name="date"></p>
+                        <nav id="navigation">
+                            <ul class="parent">
+                                <li><span class="glyphicon glyphicon-cloud"></span>Morning
+                                    <ul class="child">
+                                        <pre><a href="#"><li>9:00</li></a></pre>
+                                        <pre><a href="#"><li>9:15</li></a></pre>
+                                        <pre><a href="#"><li>9:30</li></a></pre>
+                                    </ul>
+                                </li>
+
+                                <li><span class="glyphicon glyphicon-certificate"></span>Afternoon
+                                    <ul class="child">
+                                        <pre><a href="#"><li>12:00</li></a></pre>
+                                        <pre><a href="#"><li>12:15</li></a></pre>
+                                        <pre><a href="#"><li>12:30</li></a></pre>
+                                    </ul>
+                                </li>
+                                <li><span class="glyphicon glyphicon-globe">Evening</span>
+                                    <ul class="child">
+                                        <pre><a href="#"><li>5:00</li></a></pre>
+                                        <pre><a href="#"><li>5:15</li></a></pre>
+                                        <pre><a href="#"><li>5:30</li></a></pre>
+                                    </ul>
+                                </li>
+                                <li><span class="glyphicon glyphicon-star">Night</span>
+                                    <ul class="child">
+                                        <pre><a href="#"><li>8:00</li></a></pre>
+                                        <pre><a href="#"><li>8:15</li></a></pre>
+                                        <pre><a href="#"><li>8:30</li></a></pre>
+                                    </ul>
+                                </li>
+                            </ul>
+                    </div>
+
+                    <div id="p2">
+                        <p>
+                            <ol>
+                                <li>
+                                    <pre>Car Parking <br>Bus Parking</li></ol></pre>
+                        </p>
+                    </div>
+
+                    <button type="button" class="btn btn-default">Confirm Booking</button>
+
+                    </nav>
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    li {
+        list-style-type: none;
+    }
+
+    .search {
+        margin-top: 6px;
+        width: 500px;
+    }
+
+    .login {
+        margin-top: 12px;
+        margin-left: 1200px;
+        color: whitesmoke;
+    }
+
+    .col-md-8 {
+        background-color: whitesmoke;
+    }
+
+    .col-md-4 {
+        background-color: rgba(236, 232, 229, 0.61);
+        height: 100%;
+
+
+    }
+
+    ul.child {
+        display: none;
+        widows: 100% !important;
+        margin-top: 15px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: black;
+        border: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    ul.parent>li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        padding-top: 10px;
+        background: aliceblue;
+        color: black;
+        border-right: 1px solid;
+        cursor: pointer;
+
+    }
+
+    a:hover {
+        color: orange;
+    }
+
+    .active {
+        background-color: orange;
+
+    }
+
+    .box {
+        background-color: orange;
+        color: black;
+    }
+
+    #navigation {
+        background-color: black;
+        border: 10px;
+    }
+
+    #p2 {
+        display: none;
+
+    }
+
+    .navbar-default {
+        background: rgb(5, 25, 114);
+        padding: 18px;
+
+    }
+
+    .btn-default {
+        background: orangered;
+        color: whitesmoke;
+        margin-left: 300px;
+        margin-top: 150px;
+        position: fixed;
+    }
+
+    .btn-default:hover {
+        background: rgb(235, 50, 4);
+        color: white;
+    }
+
+    .glyphicon-th {
+        color: beige;
+    }
+
+    .search {
+        margin-left: 60px;
+    }
+</style>

@@ -1,0 +1,35 @@
+
+
+$(function()
+{
+ $('ul.parent>li').hover(function(){
+    $(this).find('ul.child').show(400);
+ },function(){
+    $(this).find('ul.child').hide(400);
+ })
+});
+
+$(document).ready(function(){
+    $("#amen").click(function(){
+      $("#p1").hide();
+    });
+    $("#time").click(function(){
+        $("#p1").show();
+      })
+     
+
+});
+$(document).ready(function(){
+    $("#time").click(function(){
+        $("#p2").hide();
+      });
+      $("#amen").click(function(){
+        $("#p2").show();
+          });
+});
+
+
+
+
+
+

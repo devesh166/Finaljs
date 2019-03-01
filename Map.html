@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+ <title>Google Map</title> 
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmO6mL8lwmo0oFzeZ9U0uJldfAIvvSHO0&callback=initMap" 
+ type="text/javascript"></script>
+</head> 
+<body>
+ <div id="map" style="width: 100%; height: 700px;"></div>
+ <script type="text/javascript">
+ var locations = [
+ ['jaipur', 26.9124, 75.7873, 0],
+ ['gurgaon', 28.4595,77.0266, 1],
+ ['Mumbai', 19.0760,72.8777, 2],
+ ];
+
+ var map = new google.maps.Map(document.getElementById('map'), {
+ zoom: 10,
+ center: new google.maps.LatLng(28.5088,77.0923),
+ });
+
+ var infowindow = new google.maps.InfoWindow();
+
+ var marker, i;
+
+ for (i = 0; i < locations.length; i++) { 
+
+ marker = new google.maps.Marker({
+
+ position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+ //console.log()
+ map: map
+ });
+
+ google.maps.event.addListener(marker, 'click', (function(marker, i) {
+ return function() {
+ infowindow.setContent(locations[i][0]);
+ infowindow.open(map, marker);
+ }
+ })(marker, i));
+ }
+ </script>
+</body>
+</html>
+
+
+
+

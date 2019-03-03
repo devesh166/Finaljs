@@ -73,7 +73,7 @@
             width: 80px;
         }
 
-        #night:hover {
+        #:hover {
             color: orange;
         }
 
@@ -94,7 +94,7 @@
 </head>
 
 <body>
-
+<div id = "btnfield"></div>
     <script type="text/javascript">
 
 
@@ -178,22 +178,22 @@
             // div for morning,evening,noon and night slot....
             var div3 = document.createElement("div");
             div3.setAttribute("id", "div3");
-            var divbox1 = document.createElement("div");
-            divbox1.setAttribute("id","divbox");
             var morningbtn = document.createElement("BUTTON");
             morningbtn.innerText = "Morning"
             morningbtn.setAttribute('id', 'morning');
-            morningbtn.setAttribute("onclick", "intervals()");
-            divbox1.appendChild(morningbtn);
+            morningbtn.setAttribute("onclick", "morningintervals()");
             var noonbtn = document.createElement("BUTTON");
             noonbtn.innerText = "Afternoon"
             noonbtn.setAttribute('id', 'noon');
+            noonbtn.setAttribute("onclick", "afternoonintervals()");
             var eveningbtn = document.createElement("BUTTON");
             eveningbtn.innerText = "Evening"
             eveningbtn.setAttribute('id', 'evening');
+            eveningbtn.setAttribute("onclick", "eveningintervals()");
             var nightbtn = document.createElement("BUTTON");
             nightbtn.innerText = "Night"
             nightbtn.setAttribute('id', 'night');
+            nightbtn.setAttribute("onclick", "nightintervals()");
 
             //div for amenities...
             var p1 = document.createElement("p");
@@ -207,7 +207,6 @@
             var confirmbtn = document.createElement("button");
             confirmbtn.innerText = "CONFIRM APPOINTMENT"
             confirmbtn.setAttribute('id', 'confirmbtn');
-
             day1.appendChild(daytext1);
             day2.appendChild(daytext2);
             day3.appendChild(daytext3);
@@ -225,7 +224,7 @@
             div1.appendChild(day7);
             div2.appendChild(timebtn);
             div2.appendChild(amenitybtn);
-            div3.appendChild(divbox1);
+            div3.appendChild(morningbtn);
             div3.appendChild(noonbtn);
             div3.appendChild(eveningbtn);
             div3.appendChild(nightbtn);
@@ -244,7 +243,7 @@
             document.body.appendChild(container);
         }
         searchlist();
-        function intervals() {
+        function morningintervals() {
             var start = info[0].slots.morning[0].startTime;
             var end = info[0].slots.morning[0].endTime;
             var interval = info[0].slots.slotInterval;
@@ -259,9 +258,9 @@
                     startTime.add(interval, 'minutes');
                 }
                 var intervalcount = timeStops.length;
-                console.log(intervalcount);
+               // console.log(intervalcount);
                 var morningdiv = document.createElement("div");
-                morningdiv.setAttribute("id", "div1");
+                morningdiv.setAttribute("id", "slotval1");
                 for (let slot = 0; slot < intervalcount; slot++) {
                     var btn = document.createElement("button");
                     btn.setAttribute("id", slot);
@@ -270,13 +269,116 @@
                     morningdiv.appendChild(btn);
                 }
                 btn.setAttribute("class","val");
-                document.body.appendChild(morningdiv);
+                div3.appendChild(morningdiv);
                 return timeStops;
             }
 
             var timeStops = getTimeStops(start, end);
-            console.log('timeStops ', timeStops);
+           // console.log('timeStops ', timeStops);
         }
+
+        function afternoonintervals() {
+            var start = info[0].slots.afternoon[0].startTime;
+            var end = info[0].slots.afternoon[0].endTime;
+            var interval = info[0].slots.slotInterval;
+            function getTimeStops(start, end) {
+                var startTime = moment(start, 'HH:mm');
+                var endTime = moment(end, 'HH:mm');
+
+                var timeStops = [];
+
+                while (startTime < endTime) {
+                    timeStops.push(new moment(startTime).format('HH:mm'));
+                    startTime.add(interval, 'minutes');
+                }
+                var intervalcount = timeStops.length;
+               // console.log(intervalcount);
+                var afternooondiv = document.createElement("div");
+                afternooondiv.setAttribute("id", "slotval2");
+                for (let slot = 0; slot < intervalcount; slot++) {
+                    var btn = document.createElement("button");
+                    btn.setAttribute("id", slot);
+                    var txt = document.createTextNode(timeStops[slot]);
+                    btn.appendChild(txt);
+                    afternooondiv.appendChild(btn);
+                }
+                btn.setAttribute("class","val");
+                div3.appendChild(afternooondiv);
+                return timeStops;
+            }
+
+            var timeStops = getTimeStops(start, end);
+           // console.log('timeStops ', timeStops);
+        }
+
+        function eveningintervals() {
+            var start = info[0].slots.evening[0].startTime;
+            var end = info[0].slots.evening[0].endTime;
+            var interval = info[0].slots.slotInterval;
+            function getTimeStops(start, end) {
+                var startTime = moment(start, 'HH:mm');
+                var endTime = moment(end, 'HH:mm');
+
+                var timeStops = [];
+
+                while (startTime < endTime) {
+                    timeStops.push(new moment(startTime).format('HH:mm'));
+                    startTime.add(interval, 'minutes');
+                }
+                var intervalcount = timeStops.length;
+               // console.log(intervalcount);
+                var eveningdiv = document.createElement("div");
+                eveningdiv.setAttribute("id", "slotval3");
+                for (let slot = 0; slot < intervalcount; slot++) {
+                    var btn = document.createElement("button");
+                    btn.setAttribute("id", slot);
+                    var txt = document.createTextNode(timeStops[slot]);
+                    btn.appendChild(txt);
+                    eveningdiv.appendChild(btn);
+                }
+                btn.setAttribute("class","val");
+                div3.appendChild(eveningdiv);
+                return timeStops;
+            }
+
+            var timeStops = getTimeStops(start, end);
+           // console.log('timeStops ', timeStops);
+        }
+
+        function nightintervals() {
+            var start = info[0].slots.evening[0].startTime;
+            var end = info[0].slots.evening[0].endTime;
+            var interval = info[0].slots.slotInterval;
+            function getTimeStops(start, end) {
+                var startTime = moment(start, 'HH:mm');
+                var endTime = moment(end, 'HH:mm');
+
+                var timeStops = [];
+
+                while (startTime < endTime) {
+                    timeStops.push(new moment(startTime).format('HH:mm'));
+                    startTime.add(interval, 'minutes');
+                }
+                var intervalcount = timeStops.length;
+               // console.log(intervalcount);
+                var nightdiv = document.createElement("div");
+                nightdiv.setAttribute("id", "slotval4");
+                for (let slot = 0; slot < intervalcount; slot++) {
+                    var btn = document.createElement("button");
+                    btn.setAttribute("id", slot);
+                    var txt = document.createTextNode(timeStops[slot]);
+                    btn.appendChild(txt);
+                    nightdiv.appendChild(btn);
+                }
+                btn.setAttribute("class","val");
+                div3.appendChild(nightdiv);
+                return timeStops;
+            }
+
+            var timeStops = getTimeStops(start, end);
+           // console.log('timeStops ', timeStops);
+        }
+
 
 
     </script>

@@ -1,4 +1,71 @@
-        .containerbox {
+        .col-md-4 {
+            background-color: rgba(236, 232, 229, 0.61);
+            height: 100%;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .close{
+            float: top;
+            float: right;
+            color: black;
+        }
+        A:hover {
+            color: orange;
+            padding: 10px 5px;
+        }
+        A {
+            color: blue;
+            padding: 10px 5px;
+        }
+        #div2 {
+            font-size: 20px;
+            padding: 10px 10px;
+        }
+        #morning {
+            margin-top: 20px;
+            width: 80px;
+        }
+        #morning:hover {
+            color: orange;
+        }
+        #noon {
+            margin-top: 20px;
+            width: 80px;
+        }
+        #noon:hover {
+            color: orange;
+        }
+        #evening {
+            margin-top: 20px;
+            width: 80px;
+        }
+        #evening:hover {
+            color: orange;
+        }
+        #night {
+            margin-top: 20px;
+            width: 80px;
+        }
+        #:hover {
+            color: orange;
+        }
+        #confirmbtn {
+            background-color: orange;
+            color: white;
+            width: 200px;
+            float: right;
+            height: 50px;
+        }
+        #confirmbtn:hover {
+            background-color: orangered;
+        }        
+
+
+
+.containerbox {
           padding:   10px 100px 50px;
             background-color: white;
         }

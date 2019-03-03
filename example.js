@@ -1,6 +1,6 @@
 ﻿var info = [
             {
-                "docName": "Dr.Krishna",
+                "docName": "Dr.Krishna Shekhawat",
                 "doctorID": 0,
                 "specialization": "Dental",
                 "qualification": "BDS",
@@ -50,7 +50,7 @@
             },
 
             {
-                "docName": "Ashish",
+                "docName": "Dr.Ashish pareek",
                 "doctorID": 1,
                 "specialization": "Cardiologists‎ ",
                 "qualification": "MD",
@@ -61,7 +61,7 @@
                 "address": [
                     {
                         "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineTwo": "Gn 6, N g Sector Destinetia club",
                         "city": "kerela",
                         "state": "kerela",
                         "gpsCoordinates": {
@@ -104,7 +104,7 @@
 
 
             {
-                "docName": "Jitu",
+                "docName": "Dr.Jitender Kumar",
                 "doctorID": 2,
                 "specialization": "Dental",
                 "qualification": "MBBS",
@@ -114,8 +114,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "SMS",
+                        "addressLineTwo": "N 5,Sector-23 Balaji Garden",
                         "city": "Mumbai",
                         "state": "Maharastra",
                         "gpsCoordinates": {
@@ -154,18 +154,18 @@
             },
 
             {
-                "docName": "Niharika",
+                "docName": "Dr.Niharika Singh",
                 "doctorID": 3,
                 "specialization": "Geriatricians‎",
-                "qualification": "BDS",
+                "qualification": "BDS,MBBS",
                 "rating": 3,
                 "experience": 2,
                 "cost": 1500,
                 "gender": "female",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "MAHAVIR HOSPITAL",
+                        "addressLineTwo": "N-8,Sector-23",
                         "city": "New Delhi",
                         "state": "Delhi",
                         "gpsCoordinates": {
@@ -205,18 +205,18 @@
 
 
             {
-                "docName": "Adtiya",
+                "docName": "Dr.Adtiya Chopra",
                 "doctorID": 4,
                 "specialization": "Gastroenterologists‎",
-                "qualification": "MD",
+                "qualification": "MD,BDS",
                 "rating": 2,
                 "experience": 8,
                 "cost": 500,
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "GANGORI HOSPITAL",
+                        "addressLineTwo": "Gn 19,Sector-30, khadi colony",
                         "city": "Dehradun",
                         "state": "UK",
                         "gpsCoordinates": {
@@ -255,7 +255,7 @@
             },
 
             {
-                "docName": "shan",
+                "docName": "Dr.Shan Sharma",
                 "doctorID": 5,
                 "specialization": "Allergologists‎",
                 "qualification": "DO",
@@ -265,8 +265,8 @@
                 "gender": "Female",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Sharma Nursing Home",
+                        "addressLineTwo": "Pocket-3,Sector 20",
                         "city": "Jammu and Kashmir",
                         "state": "J and K",
                         "gpsCoordinates": {
@@ -305,18 +305,18 @@
             },
 
             {
-                "docName": "Neha",
+                "docName": "Dr.Neha Choudhary",
                 "doctorID": 6,
                 "specialization": "Dental",
-                "qualification": "BDS",
+                "qualification": "BDS,MBBS",
                 "rating": 4,
                 "experience": 10,
                 "cost": 500,
                 "gender": "female",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Choudhary Nursing home",
+                        "addressLineTwo": "Pocket-5,Sector 15",
                         "city": "Tamil Nadu",
                         "state": "Tamil",
                         "gpsCoordinates": {
@@ -355,7 +355,7 @@
             },
 
             {
-                "docName": "Hiamanshu",
+                "docName": "Dr.Hiamanshu Saini",
                 "doctorID": 7,
                 "specialization": "Diabetologists‎ ",
                 "qualification": "MBBS",
@@ -365,8 +365,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Pilani Nursing home",
+                        "addressLineTwo": "P-10 ,Sector - 20",
                         "city": "banglore",
                         "state": "Delhi",
                         "gpsCoordinates": {
@@ -405,7 +405,7 @@
             },
 
             {
-                "docName": "Hemu",
+                "docName": "Dr.Hemu Barad",
                 "doctorID": 8,
                 "specialization": "Cardiologists‎",
                 "qualification": "MBBS",
@@ -415,8 +415,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Sirohi Nursing Home",
+                        "addressLineTwo": "Gn 15,Sector -20 Rajput Garden",
                         "city": "Udyog vihar",
                         "state": "Delhi",
                         "gpsCoordinates": {
@@ -455,7 +455,7 @@
             },
 
             {
-                "docName": "Virat",
+                "docName": "Dr.Virat Singh",
                 "doctorID": 9,
                 "specialization": "Internists‎",
                 "qualification": "DO",
@@ -465,8 +465,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Singh Nursing Home",
+                        "addressLineTwo": "Q 5,Cyber city",
                         "city": "Cyber city",
                         "state": "Delhi",
                         "gpsCoordinates": {
@@ -505,7 +505,7 @@
             },
 
             {
-                "docName": "Raunak",
+                "docName": "Dr.Raunak tikha",
                 "doctorID": 10,
                 "specialization": "Geriatricians‎",
                 "qualification": "BDS",
@@ -515,8 +515,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Trikha Nursing Home",
+                        "addressLineTwo": "Gn 1, Palamvihar",
                         "city": "New Delhi",
                         "state": "Delhi",
                         "gpsCoordinates": {
@@ -555,7 +555,7 @@
             },
 
             {
-                "docName": "Avi",
+                "docName": "Dr.Avi Sharma",
                 "doctorID": 11,
                 "specialization": "Internists‎",
                 "qualification": "BMBS",
@@ -565,8 +565,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Surajgarh Nursing Home",
+                        "addressLineTwo": "Suraj-garh, house-23",
                         "city": "gurgaon kellton tech",
                         "state": " haryana",
                         "gpsCoordinates": {
@@ -605,18 +605,18 @@
             },
 
             {
-                "docName": "Aashi",
+                "docName": "Dr.Aashi Beniwal",
                 "doctorID": 12,
                 "specialization": "Heart",
-                "qualification": "BDS",
+                "qualification": "BDS,BO",
                 "rating": 2,
                 "experience": 10,
                 "cost": 500,
                 "gender": "female",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Beniwal Nursing Home",
+                        "addressLineTwo": "Gn 20, A N G Buliding",
                         "city": "noida",
                         "state": "UP",
                         "gpsCoordinates": {
@@ -655,7 +655,7 @@
             },
 
             {
-                "docName": "Sonal",
+                "docName": "Dr.Sonal Saini",
                 "doctorID": 13,
                 "specialization": "Diabetologists‎ ",
                 "qualification": "MD",
@@ -665,8 +665,8 @@
                 "gender": "female",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Rawat Nursing Home",
+                        "addressLineTwo": "Pocket-2, U Block, Sector-35",
                         "city": "Noida",
                         "state": "UP",
                         "gpsCoordinates": {
@@ -705,18 +705,18 @@
             },
 
             {
-                "docName": "Tejas",
+                "docName": "Dr.Tejas Sharma",
                 "doctorID": 14,
                 "specialization": "Internists‎ ",
-                "qualification": "MBBS",
+                "qualification": "MBBS,BDS",
                 "rating": 2,
                 "experience": 3,
                 "cost": 300,
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "TRS Nursing Home",
+                        "addressLineTwo": "Pocket-5, TRS Block",
                         "city": "Ghaziabaad",
                         "state": "UP",
                         "gpsCoordinates": {
@@ -754,7 +754,7 @@
                 }
             },
             {
-                "docName": "Abhishek",
+                "docName": "Dr.Abhishek",
                 "doctorID": 15,
                 "specialization": "Immunologists‎",
                 "qualification": "BDS",
@@ -764,8 +764,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Shiva Nursing Home",
+                        "addressLineTwo": "Pockeet-7, buliding-4, Sector-10",
                         "city": "Gurgaon",
                         "state": "haryana",
                         "gpsCoordinates": {
@@ -802,7 +802,7 @@
                     ]
                 }
             }, {
-                "docName": "Lokesh",
+                "docName": "Dr.Lokesh Soni",
                 "doctorID": 16,
                 "specialization": "Immunologists‎",
                 "qualification": "BDS",
@@ -812,8 +812,8 @@
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Soni Nursing Home",
+                        "addressLineTwo": "Pocket-8, sector-25",
                         "city": "Gurgaon",
                         "state": "Gurgaon",
                         "gpsCoordinates": {
@@ -850,18 +850,18 @@
                     ]
                 }
             }, {
-                "docName": "Saurabh",
+                "docName": "Dr.Saurabh",
                 "doctorID": 17,
                 "specialization": "Immunologists‎",
-                "qualification": "BDS",
+                "qualification": "BDS,MBBS",
                 "rating": 3,
                 "experience": 6,
                 "cost": 500,
                 "gender": "male",
                 "address": [
                     {
-                        "addressLineOne": "Khetrapal Nursing Home",
-                        "addressLineTwo": "Gn 5, F N g Sector Rajouri Garden",
+                        "addressLineOne": "Pareek Nursing Home",
+                        "addressLineTwo": "Pocket-9, behind mandelia hostel",
                         "city": "Gurgaon",
                         "state": "sector 37",
                         "gpsCoordinates": {

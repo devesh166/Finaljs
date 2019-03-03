@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="example.js"></script>
+</head>
+   <style>
+       
+       .col-md-4 {
+            background-color: rgba(236, 232, 229, 0.61);
+            height: 100%;
+
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+
+        }
+        A:hover {
+            color: orange;
+            padding: 10px 5px;
+        
+        }
+        A{
+            color: blue;
+            padding: 10px 5px;
+        }
+#div2{
+    font-size: 20px;
+    padding: 10px 10px;
+}
+button{
+    margin-top: 20px;
+    width: 80px;
+}
+button:hover{
+    color:orange;
+}
+#confirmbtn{
+    background-color: orange;
+    color: white;
+    width: 200px;
+    float:right;
+    height: 50px;
+    
+}
+#confirmbtn:hover{
+    background-color: orangered;
+}
+#img
+{
+    align:right;
+    
+}
+
+   </style>
+
+</head>
+
+<body>
+        
+        
+    <script type="text/javascript">
+         
+
+        function searchlist() {
+           
+            var container = document.createElement("div");
+            container.setAttribute("class", "containerbox");
+            container.setAttribute("id", "maindiv")
+            // container
+    
+            var superRow = document.createElement("div");
+            superRow.setAttribute("class", "row");
+    
+            var leftRow = document.createElement("div");
+            leftRow.setAttribute("class", "col-md-8")
+            leftRow.setAttribute("id", "lrow")        //list
+    
+    
+            var rightRow = document.createElement("div");
+            rightRow.setAttribute("id", "map")
+            rightRow.setAttribute("class", "col-md-4") 
+        
+            var icon=document.createElement("span");
+            icon.setAttribute("id","img");
+            icon.className= "glyphicon glyphicon-remove";
+            
+           
+           rightRow.appendChild(icon);
+            var addressone = document.createElement("h2");
+            addressone.setAttribute("id","addressone");
+            var addresstext1 = document.createTextNode(info[0].address[0].addressLineOne);//addressone
+            var addresstwo = document.createElement("h5");
+            addresstwo.setAttribute("id","addresstwo");
+            var addresstext2 = document.createTextNode(info[0].address[0].addressLineTwo);//addresstwo
+            var addressone1 = document.createElement("h5");
+            addressone1.setAttribute("id","addressone");
+            var addresstext3 = document.createTextNode(info[0].address[0].addressLineOne);//addressone
+            addressone.appendChild(addresstext1);
+            addresstwo.appendChild(addresstext2);
+            addressone1.appendChild(addresstext3);
+            
+
+ 
+             // Div for days.....
+            var div1 = document.createElement("div");
+            div1.setAttribute("id","div1");
+            var text = document.createTextNode("Available:");
+            var day1 = document.createElement("A");
+                day1.setAttribute("class", "font14 font-medium");
+                var daytext1 = document.createTextNode("SUN");
+                day1.setAttribute("href"," ");
+                var day2 = document.createElement("A");
+                day2.setAttribute("class", "font14 font-medium");
+                var daytext2 = document.createTextNode("MON");
+                day2.setAttribute("href"," ");
+                var day3 = document.createElement("A");
+                day3.setAttribute("class", "font14 font-medium");
+                var daytext3 = document.createTextNode("TUE");
+                day3.setAttribute("href"," ");
+                var day4 = document.createElement("A");
+                day4.setAttribute("class", "font14 font-medium");
+                var daytext4 = document.createTextNode("WED");
+                day4.setAttribute("href"," ");
+                var day5 = document.createElement("A");
+                day5.setAttribute("class", "font14 font-medium");
+                var daytext5 = document.createTextNode("THU");
+                day5.setAttribute("href"," ");
+                var day6 = document.createElement("A");
+                day6.setAttribute("class", "font14 font-medium");
+                var daytext6 = document.createTextNode("FRI");
+                day6.setAttribute("href"," ");
+                var day7 = document.createElement("A");
+                day7.setAttribute("class", "font14 font-medium");
+                var daytext7 = document.createTextNode("SAT");
+                day7.setAttribute("href"," ");
+ 
+                //Div for time and amenities.......
+                var div2 = document.createElement("div");
+            div2.setAttribute("id","div2");
+            var timebtn = document.createElement("A");
+                timebtn.setAttribute("id", "timebt");
+                var timetext= document.createTextNode("Time"+ " "+" | ");
+                timebtn.setAttribute("href"," ");
+
+                timebtn.appendChild(timetext);
+
+                var amenitybtn = document.createElement("A");
+                var amenitytext= document.createTextNode("Amenities");
+                amenitybtn.setAttribute("id","amen");
+                amenitybtn.setAttribute("href"," ");
+                amenitybtn.appendChild(amenitytext);
+            
+
+                // div for morning,evening,noon and night slot....
+                var div3 = document.createElement("div");
+            div3.setAttribute("id","div3");
+                var morningbtn = document.createElement("BUTTON");
+            morningbtn.innerText = "Morning"
+            morningbtn.setAttribute('id', 'morning');
+            var noonbtn = document.createElement("BUTTON");
+            noonbtn.innerText = "Afternoon"
+            noonbtn.setAttribute('id', 'noon');
+            var eveningbtn = document.createElement("BUTTON");
+            eveningbtn.innerText = "Evening"
+            eveningbtn.setAttribute('id', 'evening');
+            var nightbtn = document.createElement("BUTTON");
+            nightbtn.innerText = "Night"
+            nightbtn.setAttribute('id', 'night');
+
+            //div for amenities...
+            var p1 = document.createElement("p");
+            p1.setAttribute("class","a");
+            var txtfield = document.createTextNode("Car Parking");
+            p1.appendChild(txtfield);
+            div1.appendChild(p1);
+            var calendar = document.createElement("INPUT");
+  calendar.setAttribute("type", "date");
+    
+var confirmbtn = document.createElement("button");
+confirmbtn.innerText = "CONFIRM APPOINTMENT"
+            confirmbtn.setAttribute('id', 'confirmbtn');
+
+            day1.appendChild(daytext1);
+            day2.appendChild(daytext2);
+            day3.appendChild(daytext3);
+            day4.appendChild(daytext4);
+            day5.appendChild(daytext5);
+            day6.appendChild(daytext6);
+            day7.appendChild(daytext7);
+
+            div1.appendChild(day1);
+            div1.appendChild(day2);
+            div1.appendChild(day3);
+            div1.appendChild(day4);
+            div1.appendChild(day5);
+            div1.appendChild(day6);
+            div1.appendChild(day7);
+            
+            div2.appendChild(timebtn);
+            div2.appendChild(amenitybtn);
+            div3.appendChild(morningbtn);
+            div3.appendChild(noonbtn);
+            div3.appendChild(eveningbtn);
+            div3.appendChild(nightbtn);
+            rightRow.appendChild(addressone);
+            rightRow.appendChild(addresstwo);
+            rightRow.appendChild(addressone1);
+            rightRow.appendChild(div1);
+            rightRow.appendChild(div2);
+            rightRow.appendChild(calendar);
+            rightRow.appendChild(div3);
+            rightRow.appendChild(p1);
+            rightRow.appendChild(confirmbtn);
+            superRow.appendChild(leftRow);
+            superRow.appendChild(rightRow);
+            container.appendChild(superRow);
+            document.body.appendChild(container);
+        }
+        searchlist();
+       
+        </script>
+        
+</body>
+
+</html>
+
+

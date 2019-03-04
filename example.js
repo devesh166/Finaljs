@@ -1,4 +1,4 @@
-﻿var info = [
+var info = [
             {
                 "docName": "Dr.Krishna Shekhawat",
                 "doctorID": 0,
@@ -65,8 +65,8 @@
                         "city": "kerela",
                         "state": "kerela",
                         "gpsCoordinates": {
-                            "gpsLatitude": 10.8505,
-                            "gpsLongitude": 76.2711
+                            "gpsLatitude": 28.8505,
+                            "gpsLongitude": 77.2711
                         }
                     }
                 ],
@@ -119,8 +119,8 @@
                         "city": "Mumbai",
                         "state": "Maharastra",
                         "gpsCoordinates": {
-                            "gpsLatitude": 19.0760,
-                            "gpsLongitude": 72.8777
+                            "gpsLatitude": 28.1760,
+                            "gpsLongitude": 77.8777
                         }
                     }
                 ],
@@ -220,8 +220,8 @@
                         "city": "Dehradun",
                         "state": "UK",
                         "gpsCoordinates": {
-                            "gpsLatitude": 30.3165,
-                            "gpsLongitude": 78.0322
+                            "gpsLatitude": 28.3165,
+                            "gpsLongitude": 77.0322
                         }
                     }
                 ],
@@ -270,8 +270,8 @@
                         "city": "Jammu and Kashmir",
                         "state": "J and K",
                         "gpsCoordinates": {
-                            "gpsLatitude": 34.083656,
-                            "gpsLongitude": 74.797371
+                            "gpsLatitude": 28.083656,
+                            "gpsLongitude": 77.797371
                         }
                     }
                 ],
@@ -320,8 +320,8 @@
                         "city": "Tamil Nadu",
                         "state": "Tamil",
                         "gpsCoordinates": {
-                            "gpsLatitude": 11.1271,
-                            "gpsLongitude": 78.6569
+                            "gpsLatitude": 28.1271,
+                            "gpsLongitude": 77.6569
                         }
                     }
                 ],
@@ -370,7 +370,7 @@
                         "city": "banglore",
                         "state": "Delhi",
                         "gpsCoordinates": {
-                            "gpsLatitude": 12.9716,
+                            "gpsLatitude": 28.9716,
                             "gpsLongitude": 77.5946
                         }
                     }

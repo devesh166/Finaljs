@@ -10,6 +10,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxrjd3U5PCNnJLlprfZhI3fCaEEyLRwnQ&callback=initMap"
         type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry"></script>
+
 
     <!-- Font Awesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -220,9 +222,11 @@
                 
      
             //console.log(dis);
+            var distanceid = "dis"+el;
 
             var distance = document.createElement("p");
             distance.setAttribute("class", "grey-text font12");
+            distance.setAttribute("id",distanceid);
             var distancetext = document.createTextNode("1.6" + "km");   //distance
             distance.appendChild(distancetext);
 
@@ -282,6 +286,21 @@
         //         document.getElementById(j).style.visibility="visible";
         //     })
         // }
+        for(let k=0;k<info.length;k++){
+        let disid = "dis"+k;
+        
+
+        var p1 = new google.maps.LatLng(28.5088, 77.0923);
+        var p2 = new google.maps.LatLng(info[k].address[0].gpsCoordinates.gpsLatitude,info[k].address[0].gpsCoordinates.gpsLongitude);
+
+          let dist =((google.maps.geometry.spherical.computeDistanceBetween(p2, p1) )/ 1000).toFixed(2);
+
+
+
+        document.getElementById(disid).innerHTML = dist+ "km"
+        }
+        
+            
 
 
         loadMap();
@@ -291,8 +310,6 @@
 
             document.getElementById(k).addEventListener("click", function () {
                 loadclinic(k);
-
-
 
             })
         }

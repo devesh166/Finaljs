@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxrjd3U5PCNnJLlprfZhI3fCaEEyLRwnQ&callback=initMap"
+        type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="example.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function ($) {
+            console.log('Document Ready');
+            searchlist();
+        });    
+    </script>
+    <div id="btnfield"></div>
+
+
+
+</body>
+
+</html>
+<script type="text/javascript">
+         
+
+    
+
+
+    function searchlist() {
+
+
+        
+        
+
+        
+
+       
+
+
+
+
+
+
+        // console.log(info[0].doctorID);
+
+        var container = document.createElement("div");
+        container.setAttribute("class", "containerbox");
+        container.setAttribute("id", "maindiv")
+        // container
+
+        var superRow = document.createElement("div");
+        superRow.setAttribute("id", "superrow");
+        superRow.setAttribute("class", "row");
+
+
+
+
+
+
+
+
+        var rightRow = document.createElement("div");
+        rightRow.setAttribute("id", "map")
+        rightRow.setAttribute("class", "col-md-4")         //map
+
+
+
+
+
+        var leftRow = document.createElement("div");
+        leftRow.setAttribute("class", "col-md-8")
+        leftRow.setAttribute("id", "lrow")        //list
+
+
+
+
+        var scroll = document.createElement("div");
+        scroll.setAttribute("class", "scrollbar")
+        scroll.setAttribute("id", "style-3")
+        scroll.style.height = "300px";
+        scroll.setAttribute("style", "height:700px; overflow-y: scroll;")
+
+        var list = document.createElement("ul");
+
+
+        //array variables
+        var listelement = [];
+        var buttonid = [];
+
+        // var g=info[0].doctorID;
+
+        for (var el = 0; el < info.length; el++)  // json length
+        {   //var g=info[el].doctorID;
+            // console.log(g);
+            var elementid = "list" + el;
+
+
+            var hr = document.createElement("HR");
+            listelement[el] = document.createElement("li");
+
+            listelement[el].setAttribute("class", "card")
+            listelement[el].setAttribute("id", elementid)
+
+            var rowCard = document.createElement("div");
+            rowCard.setAttribute("class", "row rowclass")
+
+            var leftCard = document.createElement("div");
+            leftCard.setAttribute("class", "col-md-2 leftCard")
+
+
+
+            var img = document.createElement("img");
+            if (info[el].gender == "male") {
+                img.src = "Doctors-Male.jpg";
+            } else {
+                img.src = "Doctors-Female.jpg";
+            }
+
+            img.setAttribute("class", "docimage")
+            leftCard.appendChild(img);
+
+
+            var centerCard = document.createElement("div");
+            centerCard.setAttribute("class", "col-md-5 centerCard")
+            var docDetails = document.createElement("div");
+            docDetails.setAttribute("class", "docDetails");
+            var docName = document.createElement("h5");
+            docName.setAttribute("class", "m-0");
+            var atag = document.createElement("a");
+            var nametext = document.createTextNode(info[el].docName)   //docname
+
+            var degree = document.createElement("p");
+            var degreetext = document.createTextNode("MBBS,MD,FCCP,FIAMS")
+            degree.appendChild(degreetext);
+            degree.setAttribute("class", "grey-text")                                   //Qualification
+
+            var ratinglist = document.createElement("ul");
+            ratinglist.setAttribute("class", "rating")
+            var rate = info[el].rating;
+            let li = [];                                   //rating
+            for (let i = 1; i <= 5; i++) {
+
+
+                li[i] = document.createElement("li");
+                if (i <= rate) {
+                    li[i].setAttribute("class", "fa fa-star checked");
+                } else {
+                    li[i].setAttribute("class", "fa fa-star star1")
+                }
+                ratinglist.appendChild(li[i]);
+
+            }
+
+            var speciality = document.createElement("p");
+
+            speciality.setAttribute("class", "grey-text font-medium mt-3 mb-0")
+            var specialitytext = document.createTextNode(info[el].specialization)  //speciality
+            speciality.appendChild(specialitytext);
+
+
+
+            atag.appendChild(nametext);
+            docName.appendChild(atag);
+            docDetails.appendChild(docName);
+            docDetails.appendChild(degree);
+            docDetails.appendChild(ratinglist);
+            docDetails.appendChild(speciality);
+            centerCard.appendChild(docDetails);
+
+
+
+
+
+
+
+            var rightCard = document.createElement("div");
+            rightCard.setAttribute("class", "col-md-5 rightCard")
+
+
+
+            var clinicDetails = document.createElement("div");
+            clinicDetails.setAttribute("class", "doc-clinic-details pl-md-4 d-flex justify-content-around flex-column h-100");
+
+            var atag1 = document.createElement("a");
+            atag1.setAttribute("class", "font14 font-medium");
+            var clinitext = document.createTextNode(info[el].address[0].addressLineOne);   //clinic name
+            atag1.appendChild(clinitext);
+            //console.log(info[el]);
+            //initGeolocation();
+           // var dis;
+
+                
+                
+     
+            //console.log(dis);
+
+            var distance = document.createElement("p");
+            distance.setAttribute("class", "grey-text font12");
+            var distancetext = document.createTextNode("1.6" + "km");   //distance
+            distance.appendChild(distancetext);
+
+
+
+
+
+            var price = document.createElement("h5");
+            price.setAttribute("class", "m-0");
+            var pricetext = document.createTextNode(info[el].cost)   //Price
+            price.appendChild(pricetext);
+
+            //buttonid[el] = el;
+
+            var button = document.createElement("button");
+            button.type = "button";
+            button.setAttribute("id", el)
+            button.setAttribute("class", "btn ")
+            var buttontext = document.createTextNode("Book");
+            button.appendChild(buttontext);
+            //<button type="button" class="btn book-appointment btn-primary">Book</button>
+
+            clinicDetails.appendChild(atag1);
+            clinicDetails.appendChild(distance);
+            clinicDetails.appendChild(price)
+            clinicDetails.appendChild(button);
+            rightCard.appendChild(clinicDetails)
+
+
+
+
+
+            rowCard.appendChild(leftCard)
+            rowCard.appendChild(centerCard);
+            rowCard.appendChild(rightCard);
+
+            listelement[el].appendChild(rowCard);
+            listelement[el].appendChild(hr);
+
+            list.appendChild(listelement[el]);
+
+            scroll.appendChild(list);
+
+        }
+
+        leftRow.appendChild(scroll);
+        superRow.appendChild(leftRow);
+
+
+        superRow.appendChild(rightRow);
+        container.appendChild(superRow);
+        document.body.appendChild(container);
+
+        // for(let j=0;j<20;j++){
+        //     let elid ="list"+j;
+        //     document.getElementById(elid).addEventListener("click", function(){
+        //         document.getElementById(j).style.visibility="visible";
+        //     })
+        // }
+
+
+        loadMap();
+
+
+        for (let k = 0; k < info.length; k++) {
+
+            document.getElementById(k).addEventListener("click", function () {
+                loadclinic(k);
+
+
+
+            })
+        }
+
+
+
+
+
+        $(function () {
+            $('ul.parent>li').hover(function () {
+                $(this).find('ul.child').show(400);
+            }, function () {
+                $(this).find('ul.child').hide(400);
+            })
+        });
+
+        $(document).ready(function () {
+            $("#amen").click(function () {
+                $("#p1").hide();
+            });
+            $("#time").click(function () {
+                $("#p1").show();
+            })
+
+
+        });
+        $(document).ready(function () {
+            $("#time").click(function () {
+                $("#p2").hide();
+            });
+            $("#amen").click(function () {
+                $("#p2").show();
+            });
+        });
+
+
+
+
+    }
+    var k;
+    function loadclinic(k) {
+        //console.log("hii iam inside")
+
+        document.getElementById("map").innerHTML = "";
+        var rightRow = document.getElementById("map");
+        var superRow = document.getElementById("superrow")
+
+        var close = document.createElement("a")
+        var closetext = document.createTextNode("X");
+        close.setAttribute("href", "");
+        close.setAttribute("class", "close");
+        close.appendChild(closetext)
+
+        // close.setAttribute("class", "close");
+        // close.setAttribute("href", "");
+        // close.appendChild(closetext);
+        // close.innerHTML ="X";
+
+        var addressone = document.createElement("h2");
+        addressone.setAttribute("id", "addressone");
+        var addresstext1 = document.createTextNode(info[k].address[0].addressLineOne);//addressone
+        var addresstwo = document.createElement("h5");
+        addresstwo.setAttribute("id", "addresstwo");
+        var addresstext2 = document.createTextNode(info[k].address[0].addressLineTwo);//addresstwo
+        var addressone1 = document.createElement("h5");
+        addressone1.setAttribute("id", "addressone");
+        var addresstext3 = document.createTextNode(info[k].address[0].addressLineOne);//addressone
+        addressone.appendChild(addresstext1);
+        addresstwo.appendChild(addresstext2);
+        addressone1.appendChild(addresstext3);
+
+        // Div for days.....
+        var div1 = document.createElement("div");
+        div1.setAttribute("id", "div1");
+        var text = document.createTextNode("Available:");
+        var day1 = document.createElement("A");
+        day1.setAttribute("class", "font14 font-medium");
+        var daytext1 = document.createTextNode("SUN");
+        day1.setAttribute("href", "javascript:void(0); ");
+        var day2 = document.createElement("A");
+        day2.setAttribute("class", "font14 font-medium");
+        var daytext2 = document.createTextNode("MON");
+        day2.setAttribute("href", "javascript:void(0); ");
+        var day3 = document.createElement("A");
+        day3.setAttribute("class", "font14 font-medium");
+        var daytext3 = document.createTextNode("TUE");
+        day3.setAttribute("href", " javascript:void(0);");
+        var day4 = document.createElement("A");
+        day4.setAttribute("class", "font14 font-medium");
+        var daytext4 = document.createTextNode("WED");
+        day4.setAttribute("href", "javascript:void(0); ");
+        var day5 = document.createElement("A");
+        day5.setAttribute("class", "font14 font-medium");
+        var daytext5 = document.createTextNode("THU");
+        day5.setAttribute("href", "javascript:void(0); ");
+        var day6 = document.createElement("A");
+        day6.setAttribute("class", "font14 font-medium");
+        var daytext6 = document.createTextNode("FRI");
+        day6.setAttribute("href", " javascript:void(0);");
+        var day7 = document.createElement("A");
+        day7.setAttribute("class", "font14 font-medium");
+        var daytext7 = document.createTextNode("SAT");
+        day7.setAttribute("href", "javascript:void(0); ");
+
+        //Div for time and amenities.......
+        var div2 = document.createElement("div");
+        div2.setAttribute("id", "div2");
+        var timebtn = document.createElement("A");
+        timebtn.setAttribute("id", "timebtn");
+        var timetext = document.createTextNode("Time" + " " + " | ");
+        timebtn.setAttribute("href", "javascript:void(0); ");
+        timebtn.appendChild(timetext);
+        var amenitybtn = document.createElement("A");
+        timebtn.setAttribute("id", "amenitybtn");
+        var amenitytext = document.createTextNode("Amenities");
+        amenitybtn.setAttribute("href", "javascript:void(0); ");
+        amenitybtn.appendChild(amenitytext);
+
+        // div for morning,evening,noon and night slot....
+        var div3 = document.createElement("div");
+        div3.setAttribute("id", "div3");
+        var morningbtn = document.createElement("BUTTON");
+        morningbtn.innerText = "Morning"
+        morningbtn.setAttribute('id', 'morning');
+        morningbtn.setAttribute("onclick", "morningintervals()");
+        var noonbtn = document.createElement("BUTTON");
+        noonbtn.innerText = "Afternoon"
+        noonbtn.setAttribute('id', 'noon');
+        noonbtn.setAttribute("onclick", "afternoonintervals()");
+        var eveningbtn = document.createElement("BUTTON");
+        eveningbtn.innerText = "Evening"
+        eveningbtn.setAttribute('id', 'evening');
+        eveningbtn.setAttribute("onclick", "eveningintervals()");
+        var nightbtn = document.createElement("BUTTON");
+        nightbtn.innerText = "Night"
+        nightbtn.setAttribute('id', 'night');
+        nightbtn.setAttribute("onclick", "nightintervals()");
+
+        //div for amenities...
+        var p1 = document.createElement("p");
+        p1.setAttribute("id", "p1");
+        var txtfield = document.createTextNode("Car Parking");
+        p1.appendChild(txtfield);
+        div1.appendChild(text);
+        var calendar = document.createElement("INPUT");
+        calendar.setAttribute("type", "date");
+
+        var confirmbtn = document.createElement("button");
+        confirmbtn.innerText = "CONFIRM APPOINTMENT"
+        confirmbtn.setAttribute('id', 'confirmbtn');
+        day1.appendChild(daytext1);
+        day2.appendChild(daytext2);
+        day3.appendChild(daytext3);
+        day4.appendChild(daytext4);
+        day5.appendChild(daytext5);
+        day6.appendChild(daytext6);
+        day7.appendChild(daytext7);
+
+        div1.appendChild(day1);
+        div1.appendChild(day2);
+        div1.appendChild(day3);
+        div1.appendChild(day4);
+        div1.appendChild(day5);
+        div1.appendChild(day6);
+        div1.appendChild(day7);
+        div2.appendChild(timebtn);
+        div2.appendChild(amenitybtn);
+        div3.appendChild(morningbtn);
+        div3.appendChild(noonbtn);
+        div3.appendChild(eveningbtn);
+        div3.appendChild(nightbtn);
+        rightRow.appendChild(close);
+        rightRow.appendChild(addressone);
+        rightRow.appendChild(addresstwo);
+        rightRow.appendChild(addressone1);
+        rightRow.appendChild(div1);
+        rightRow.appendChild(div2);
+        rightRow.appendChild(calendar);
+        rightRow.appendChild(div3);
+        rightRow.appendChild(p1);
+        rightRow.appendChild(confirmbtn);
+        document.getElementById("morning").addEventListener("click", function () {
+            morningintervals(k);
+        })
+        document.getElementById("noon").addEventListener("click", function () {
+            afternoonintervals(k);
+        })
+        document.getElementById("evening").addEventListener("click", function () {
+            eveningintervals(k);
+        })
+        document.getElementById("night").addEventListener("click", function () {
+            nightintervals(k);
+        })
+
+    }
+    // searchlist();
+    function morningintervals(k) {
+        var start = info[k].slots.morning[0].startTime;
+        var end = info[k].slots.morning[0].endTime;
+        var interval = info[k].slots.slotInterval;
+        function getTimeStops(start, end) {
+            var startTime = moment(start, 'HH:mm');
+            var endTime = moment(end, 'HH:mm');
+
+            var timeStops = [];
+
+            while (startTime < endTime) {
+                timeStops.push(new moment(startTime).format('HH:mm'));
+                startTime.add(interval, 'minutes');
+            }
+            var intervalcount = timeStops.length;
+            // console.log(intervalcount);
+            for (let i = 1; i < 5; i++) {
+                let id = "slotval" + i;
+                if (document.getElementById(id)) {
+                    document.getElementById(id).remove();
+                }
+            }
+            var morningdiv = document.createElement("div");
+            morningdiv.setAttribute("id", "slotval1");
+            for (let slot = 0; slot < intervalcount; slot++) {
+                var btn = document.createElement("button");
+                btn.setAttribute("id", slot);
+                var txt = document.createTextNode(timeStops[slot]);
+                btn.appendChild(txt);
+                morningdiv.appendChild(btn);
+            }
+            btn.setAttribute("class", "val");
+
+            div3.appendChild(morningdiv);
+            return timeStops;
+        }
+
+        var timeStops = getTimeStops(start, end);
+        // console.log('timeStops ', timeStops);
+    }
+
+    function afternoonintervals(k) {
+
+        var start = info[k].slots.afternoon[0].startTime;
+        var end = info[k].slots.afternoon[0].endTime;
+        var interval = info[k].slots.slotInterval;
+        function getTimeStops(start, end) {
+            var startTime = moment(start, 'HH:mm');
+            var endTime = moment(end, 'HH:mm');
+
+            var timeStops = [];
+
+            while (startTime < endTime) {
+                timeStops.push(new moment(startTime).format('HH:mm'));
+                startTime.add(interval, 'minutes');
+            }
+            var intervalcount = timeStops.length;
+            // console.log(intervalcount);
+            for (let i = 1; i < 5; i++) {
+                let id = "slotval" + i;
+                if (document.getElementById(id)) {
+                    document.getElementById(id).remove();
+                }
+            }
+            var afternooondiv = document.createElement("div");
+            afternooondiv.setAttribute("id", "slotval2");
+            for (let slot = 0; slot < intervalcount; slot++) {
+                var btn = document.createElement("button");
+                btn.setAttribute("id", slot);
+                var txt = document.createTextNode(timeStops[slot]);
+                btn.appendChild(txt);
+                afternooondiv.appendChild(btn);
+            }
+            btn.setAttribute("class", "val");
+
+            div3.appendChild(afternooondiv);
+            return timeStops;
+        }
+
+        var timeStops = getTimeStops(start, end);
+        // console.log('timeStops ', timeStops);
+    }
+
+    function eveningintervals(k) {
+        var start = info[k].slots.evening[0].startTime;
+        var end = info[k].slots.evening[0].endTime;
+        var interval = info[k].slots.slotInterval;
+        function getTimeStops(start, end) {
+            var startTime = moment(start, 'HH:mm');
+            var endTime = moment(end, 'HH:mm');
+
+            var timeStops = [];
+
+            while (startTime < endTime) {
+                timeStops.push(new moment(startTime).format('HH:mm'));
+                startTime.add(interval, 'minutes');
+            }
+            var intervalcount = timeStops.length;
+            // console.log(intervalcount);
+            for (let i = 1; i < 5; i++) {
+                let id = "slotval" + i;
+                if (document.getElementById(id)) {
+                    document.getElementById(id).remove();
+                }
+            }
+            var eveningdiv = document.createElement("div");
+            eveningdiv.setAttribute("id", "slotval3");
+            for (let slot = 0; slot < intervalcount; slot++) {
+                var btn = document.createElement("button");
+                btn.setAttribute("id", slot);
+                var txt = document.createTextNode(timeStops[slot]);
+                btn.appendChild(txt);
+                eveningdiv.appendChild(btn);
+            }
+            btn.setAttribute("class", "val");
+            div3.appendChild(eveningdiv);
+            return timeStops;
+        }
+
+        var timeStops = getTimeStops(start, end);
+        // console.log('timeStops ', timeStops);
+    }
+
+    function nightintervals(k) {
+        var start = info[k].slots.evening[0].startTime;
+        var end = info[k].slots.evening[0].endTime;
+        var interval = info[k].slots.slotInterval;
+        function getTimeStops(start, end) {
+            var startTime = moment(start, 'HH:mm');
+            var endTime = moment(end, 'HH:mm');
+
+            var timeStops = [];
+
+            while (startTime < endTime) {
+                timeStops.push(new moment(startTime).format('HH:mm'));
+                startTime.add(interval, 'minutes');
+            }
+            var intervalcount = timeStops.length;
+            // console.log(intervalcount);
+            for (let i = 1; i < 5; i++) {
+                let id = "slotval" + i;
+                if (document.getElementById(id)) {
+                    document.getElementById(id).remove();
+                }
+            }
+            var nightdiv = document.createElement("div");
+            nightdiv.setAttribute("id", "slotval4");
+            for (let slot = 0; slot < intervalcount; slot++) {
+                var btn = document.createElement("button");
+                btn.setAttribute("id", slot);
+                var txt = document.createTextNode(timeStops[slot]);
+                btn.appendChild(txt);
+                nightdiv.appendChild(btn);
+            }
+            btn.setAttribute("class", "val");
+            div3.appendChild(nightdiv);
+            return timeStops;
+        }
+
+        var timeStops = getTimeStops(start, end);
+        // console.log('timeStops ', timeStops);
+    }
+
+
+
+
+
+
+    function loadMap() {
+        var a = [];
+
+        for (let i = 0; i < info.length; i++) {
+
+
+            var b = [];
+            var count = 0;
+            b[count] = (info[i].doctorID).toString();
+            b[++count] = info[i].address[0].gpsCoordinates.gpsLatitude;
+            b[++count] = info[i].address[0].gpsCoordinates.gpsLongitude
+            a.push(b);
+        }
+        //console.log(a);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: new google.maps.LatLng(28.5088, 77.0923),
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < a.length; i++) {
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(a[i][1], a[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+
+
+                return function () {
+
+
+                    //new google.maps.Size(42,68)
+                    //
+                    infowindow.setContent(a[i][0]);
+
+
+                    linker(a[i][0]);
+                    infowindow.open(map, marker);
+
+
+
+                }
+            })(marker, i));
+        }
+    }
+
+    function linker(id) {
+
+        first = id;
+        info.sort(function (x, y) { return x.doctorID == first ? -1 : y.doctorID == first ? 1 : 0; });
+        document.body.innerHTML = "";
+        searchlist();
+
+        console.log(info);
+        document.getElementById("list0").setAttribute("class", "onhover");
+        document.getElementById(0).style.visibility = "visible";
+        // location.reload();
+
+
+
+    }
+
+
+</script>
